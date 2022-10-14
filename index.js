@@ -4,10 +4,7 @@ const mqtt = require("mqtt");
 
 const mqttUtils = require("./mqtt/utils");
 
-// console.log(config.mqtt);
-
-// const client = mqtt.connect(mqttUtils.formatConnectionOpts(config.mqtt));
-const client = mqtt.connect("mqtt://test.mosquitto.org");
+const client = mqtt.connect(mqttUtils.formatConnectionOpts(config.mqtt));
 
 console.log(client.options);
 
