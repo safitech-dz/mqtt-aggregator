@@ -12,4 +12,4 @@ const formatConnectionOpts = (obj) => {
     };
 };
 
-module.exports = { formatConnectionOpts };
+export { formatConnectionOpts };

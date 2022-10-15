@@ -1,10 +1,12 @@
-const config = require("./config");
+import * as config from "./config.js";
 
-const fs = require("fs");
-const mqtt = require("mqtt");
+console.log(config);
 
-const mqttUtils = require("./mqtt/utils");
-const mqttLogger = require("./mqtt/logger");
+import * as fs from "fs";
+import * as mqtt from "mqtt";
+
+import * as mqttUtils from "./mqtt/utils.js";
+import * as mqttLogger from "./mqtt/logger.js";
 
 const subTopics = JSON.parse(fs.readFileSync("./sub_topics.json"));
 

@@ -10,58 +10,64 @@
 // const SUBSCRIBED = 9;
 // const MESSAGED = 10;
 
+const log = console.log;
+
+function dateStr() {
+    return Date() + " : ";
+}
+
 const connect = () => {
     console.log(Date() + ": CONNECTED!");
 };
 
 const reconnect = () => {
-    console.log(Date() + ": RECONNECTING!");
+    log(dateStr() + ": RECONNECTING!");
 };
 
 const close = () => {
-    console.log(Date() + ": CLOSED!");
+    log(dateStr() + ": CLOSED!");
 };
 
 const disconnect = () => {
-    console.log(Date() + ": DISCONNECTED!");
+    log(dateStr() + ": DISCONNECTED!");
 };
 
 const offline = () => {
-    console.log(Date() + ": OFFLINE!");
+    log(dateStr() + ": OFFLINE!");
 };
 
 const error = (err) => {
-    console.error(Date() + ": ERROR!");
+    console.error(dateStr() + ": ERROR!");
     console.error(err);
 };
 
 const end = () => {
     // ? throw
-    console.log(Date() + ": ENDED!");
+    log(dateStr() + ": ENDED!");
 };
 
 const packetsend = (packet) => {
-    console.log(Date() + ": sent:");
-    console.log(packet);
+    log(dateStr() + ": sent:");
+    log(packet);
 };
 
 const packetreceive = (packet) => {
-    console.log(date() + ": recieved:");
-    console.log(packet);
+    log(dateStr() + ": recieved:");
+    log(packet);
 };
 
 const subscribed = (topics) => {
-    console.log(Date() + ": SUBSCRIBED!");
-    console.log(topics);
+    log(dateStr() + ": SUBSCRIBED!");
+    log(topics);
 };
 
 const subscriptionError = (data) => {
     // ? throw
-    console.warn(Date() + `: SUBSCRIBE ERROR!`);
+    console.warn(dateStr() + `: SUBSCRIBE ERROR!`);
     if (data) console.warn(data);
 };
 
-module.exports = {
+export {
     connect,
     reconnect,
     close,
