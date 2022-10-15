@@ -1,6 +1,7 @@
 {
     "type": "module",
     "dependencies": {
+        "chalk": "^5.1.2",
         "dotenv": "^16.0.3",
         "mqtt": "^4.3.7"
     }

@@ -1,7 +1,5 @@
 import * as config from "./config.js";
 
-console.log(config);
-
 import * as fs from "fs";
 import * as mqtt from "mqtt";
 

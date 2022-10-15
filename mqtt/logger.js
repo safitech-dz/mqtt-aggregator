@@ -1,69 +1,62 @@
-// const CONNECTED = 0;
-// const RECONNECTING = 1;
-// const CLOSED_CONNECTION = 2;
-// const OFFLINE = 3;
-// const ERROR = 4;
-// const ENDED = 5;
-// const PACKET_SENT = 6;
-// const PACKET_RECEIVED = 7;
-// const SUBSCRIPTION_ERROR = 8;
-// const SUBSCRIBED = 9;
-// const MESSAGED = 10;
+import chalk from "chalk";
 
 const log = console.log;
 
 function dateStr() {
-    return Date() + " : ";
+    return new Date().toISOString() + " : ";
 }
 
+// ====================================================
+
 const connect = () => {
-    console.log(Date() + ": CONNECTED!");
+    log(dateStr() + chalk.bgGreen.bold("CONNECTED!"));
 };
 
 const reconnect = () => {
-    log(dateStr() + ": RECONNECTING!");
+    log(dateStr() + chalk.blueBright("RECONNECTING!"));
 };
 
 const close = () => {
-    log(dateStr() + ": CLOSED!");
+    log(dateStr() + chalk.bgGray("CLOSED!"));
 };
 
 const disconnect = () => {
-    log(dateStr() + ": DISCONNECTED!");
+    log(dateStr() + chalk.bgGray("DISCONNECTED!"));
 };
 
 const offline = () => {
-    log(dateStr() + ": OFFLINE!");
+    log(dateStr() + chalk.bgRed.bold("OFFLINE!"));
 };
 
 const error = (err) => {
-    console.error(dateStr() + ": ERROR!");
+    console.error(dateStr() + chalk.yellow("ERROR!"));
+    // TODO: format err content
     console.error(err);
 };
 
 const end = () => {
     // ? throw
-    log(dateStr() + ": ENDED!");
+    log(dateStr() + chalk.black.bgWhite("ENDED!"));
 };
 
 const packetsend = (packet) => {
-    log(dateStr() + ": sent:");
+    log(dateStr() + chalk.gray("sent:"));
     log(packet);
 };
 
 const packetreceive = (packet) => {
-    log(dateStr() + ": recieved:");
+    log(dateStr() + chalk.gray("recieved:"));
     log(packet);
 };
 
 const subscribed = (topics) => {
-    log(dateStr() + ": SUBSCRIBED!");
+    log(dateStr() + chalk.bgBlue("SUBSCRIBED!"));
     log(topics);
 };
 
 const subscriptionError = (data) => {
     // ? throw
-    console.warn(dateStr() + `: SUBSCRIBE ERROR!`);
+    console.warn(dateStr() + chalk.bgYellow("SUBSCRIBE ERROR!"));
     if (data) console.warn(data);
 };
 
