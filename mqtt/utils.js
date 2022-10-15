@@ -6,7 +6,7 @@ const formatConnectionOpts = (obj) => {
         username: obj.username, // ! computer username
         password: obj.password,
         clientId: obj.clientId,
-        clean: !!obj.clean,
+        clean: obj.clean.toLowerCase() === "true",
         keepalive: parseInt(obj.keepalive),
         reconnectPeriod: parseInt(obj.reconnectPeriod),
     };
