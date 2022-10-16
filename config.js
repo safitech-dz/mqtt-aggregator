@@ -4,15 +4,15 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const mqtt = {
-    protocol: process.env.PROTOCOL || "mqtt", // "mqtts"
-    host: process.env.HOST || "localhost",
-    port: process.env.PORT || 1884, // 8883
+    protocol: process.env.MQTT_PROTOCOL || "mqtt", // "mqtts"
+    host: process.env.MQTT_HOST || "localhost",
+    port: process.env.MQTT_PORT || 1884, // 8883
     username: process.env.MQTT_USERNAME || "user",
     password: process.env.MQTT_PASSWORD || "password",
-    clientId: process.env.CLIENTID || "client",
-    clean: process.env.CLEAN || false,
-    keepalive: process.env.KEEPALIVE || 300,
-    reconnectPeriod: process.env.RECONNECTPERIOD || 5 * 1000,
+    clientId: process.env.MQTT_CLIENTID || "client",
+    clean: process.env.MQTT_CLEAN || false,
+    keepalive: process.env.MQTT_KEEPALIVE || 300,
+    reconnectPeriod: process.env.MQTT_RECONNECTPERIOD || 5 * 1000,
     // ca: fs.readFileSync("path"),
     // rejectUnauthorized: false,
 };
