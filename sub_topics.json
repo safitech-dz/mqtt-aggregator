@@ -16,8 +16,8 @@
     "+/+/irrignnov_V1/sprinkler": { "qos": 2 },
     "+/+/irrignnov_V1/time": { "qos": 2 },
     "+/+/irrignnov_V1/frequence": { "qos": 2 },
-    "+/+/crop,Nom": { "qos": 2 },
-    "+/+/position,": { "qos": 2 },
+    "+/+/crop": { "qos": 2 },
+    "+/+/position": { "qos": 2 },
     "+/+/area": { "qos": 2 },
     "+/+/irrignnov_V1/etm": { "qos": 2 },
     "+/+/irrignnov_V1/prediction": { "qos": 2 }
