@@ -1,11 +1,6 @@
 {
-    "+/+/OWM/temperature": { "qos": 2 },
-    "+/+/OWM/humidity": { "qos": 2 },
-    "+/+/OWM/windspeed": { "qos": 2 },
-    "+/+/OWM/raingauge": { "qos": 2 },
-    "+/+/OWM/pressure": { "qos": 2 },
-    "+/+/OWM/radiation": { "qos": 2 },
-    "+/+/OWM/weather": { "qos": 2 },
+    "+/+/OWM/actualWeather": { "qos": 2 },
+    "+/+/OWM/dailyWeather": { "qos": 2 },
     "+/+/irrignnov_V1/state": { "qos": 2 },
     "+/+/irrignnov_V1/last_irrigation_date": { "qos": 2 },
     "+/+/irrignnov_V1/last_irrigation_begin": { "qos": 2 },
