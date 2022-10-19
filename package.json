@@ -4,7 +4,8 @@
     "version": "",
     "scripts": {
         "start": "node index.js",
-        "test": "mocha"
+        "test": "vitest",
+        "coverage": "vitest run --coverage"
     },
     "repository": {
         "type": "",
@@ -20,11 +21,10 @@
     "dependencies": {
         "chalk": "^5.1.2",
         "dotenv": "^16.0.3",
-        "expect.js": "^0.3.1",
         "mqtt": "^4.3.7"
     },
     "devDependencies": {
-        "mocha": "^10.1.0"
+        "vitest": "^0.24.3"
     },
     "bugs": {
         "url": ""
