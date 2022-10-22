@@ -60,6 +60,11 @@ const subscriptionError = (data) => {
     if (data) console.warn(data);
 };
 
+const message = (topic, msg) => {
+    console.log(dateStr() + "MESSAGED! " + chalk.bgGray(topic));
+    console.log(msg.toString());
+};
+
 export {
     connect,
     reconnect,
@@ -72,4 +77,5 @@ export {
     packetreceive,
     subscribed,
     subscriptionError,
+    message,
 };

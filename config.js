@@ -6,7 +6,7 @@ dotenv.config();
 const mqtt = {
     protocol: process.env.MQTT_PROTOCOL || "mqtt", // "mqtts"
     host: process.env.MQTT_HOST || "localhost",
-    port: process.env.MQTT_PORT || 1884, // 8883
+    port: process.env.MQTT_PORT || 1883, // 8883
     username: process.env.MQTT_USERNAME || "user",
     password: process.env.MQTT_PASSWORD || "password",
     clientId: process.env.MQTT_CLIENTID || "client",

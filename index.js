@@ -21,10 +21,9 @@ client.on("connect", () => {
     });
 });
 
-client.on("message", function (topic, message) {
-    // message is Buffer
-    console.log(message.toString());
-    // ...
+client.on("message", function (topic, msg) {
+    mqttLogger.message(topic, msg);
+    // ! ...
 });
 
 // client.on("packetsend", mqttLogger.packetsend);
