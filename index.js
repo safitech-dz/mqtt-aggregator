@@ -22,15 +22,15 @@ client.on("connect", () => {
     });
 });
 
-client.on("message", function (topic, msg) {
-    msg = msg.toString();
+client.on("message", function (topic, message) {
+    message = message.toString();
 
-    mqttLogger.message(topic, msg);
+    mqttLogger.message(topic, message);
 
     axios
         .post("/iot-data", {
             topic,
-            msg,
+            message,
         })
         .then(function (response) {
             console.log(response.data);
