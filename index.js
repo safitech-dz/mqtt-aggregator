@@ -2,6 +2,7 @@ import * as config from "./config.js";
 
 import * as fs from "fs";
 import * as mqtt from "mqtt";
+import axios from "./http/axios.js";
 
 import * as mqttUtils from "./mqtt/utils.js";
 import * as mqttLogger from "./mqtt/logger.js";
@@ -22,8 +23,21 @@ client.on("connect", () => {
 });
 
 client.on("message", function (topic, msg) {
+    msg = msg.toString();
+
     mqttLogger.message(topic, msg);
-    // ! ...
+
+    axios
+        .post("/iot-data", {
+            topic,
+            msg,
+        })
+        .then(function (response) {
+            console.log(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 });
 
 // client.on("packetsend", mqttLogger.packetsend);
