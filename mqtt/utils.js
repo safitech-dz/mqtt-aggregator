@@ -1,3 +1,5 @@
+import * as fs from "fs";
+
 const formatConnectionOpts = (obj) => {
     return {
         protocol: obj.protocol,
@@ -12,4 +14,21 @@ const formatConnectionOpts = (obj) => {
     };
 };
 
-export { formatConnectionOpts };
+/**
+ * @returns {array}
+ */
+const parseTopicsDirectory = () => {
+    const topicsDirectory = JSON.parse(
+        fs.readFileSync("./topics_directory.json")
+    );
+
+    let topics = topicsDirectory.map((entry) => {
+        return `"${entry.topic}": {"qos": ${entry.qos}}`
+            .replace("%u", "+")
+            .replace("%d", "+");
+    });
+
+    return JSON.parse("{" + topics.join(",") + "}");
+};
+
+export { formatConnectionOpts, parseTopicsDirectory };

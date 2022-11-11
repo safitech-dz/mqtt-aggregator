@@ -7,7 +7,7 @@ import axios from "./http/axios.js";
 import * as mqttUtils from "./mqtt/utils.js";
 import * as mqttLogger from "./mqtt/logger.js";
 
-const subTopics = JSON.parse(fs.readFileSync("./sub_topics.json"));
+const topics = mqttUtils.parseTopicsDirectory();
 
 const client = mqtt.connect(mqttUtils.formatConnectionOpts(config.mqtt));
 
@@ -16,7 +16,7 @@ console.log(client.options);
 client.on("connect", () => {
     mqttLogger.connect();
 
-    client.subscribe(subTopics, (err, grant) => {
+    client.subscribe(topics, (err, grant) => {
         if (err) mqttLogger.subscriptionError(err);
         mqttLogger.subscribed(grant);
     });
