@@ -5,6 +5,7 @@ import axios from "./http/axios.js";
 
 import * as mqttUtils from "./mqtt/utils.js";
 import * as mqttLogger from "./mqtt/logger.js";
+import chalk from "chalk";
 
 const topics = mqttUtils.parseTopicsDirectory();
 
@@ -38,8 +39,10 @@ client.on("message", function (topic, message) {
             console.log(response.data);
         })
         .catch(function (error) {
-            // TODO: handle error
-            console.log(error);
+            // TODO: handle error + log + cache + retry
+            mqttLogger.log(chalk.bgRed.bold(mqttLogger.dateStr() + "AJAX ERROR"));
+
+            console.log(error.response.data);
         });
 });
 

@@ -78,4 +78,7 @@ export {
     subscribed,
     subscriptionError,
     message,
+    //
+    dateStr,
+    log,
 };
