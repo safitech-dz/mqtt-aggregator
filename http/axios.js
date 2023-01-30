@@ -15,6 +15,7 @@ const token = res.data.token;
 
 export default axiosBaseUrl.create({
     headers: {
+        Accept: "application/json",
         Authorization: `Bearer ${token}`,
     },
 });
